@@ -8,9 +8,19 @@ namespace Task2
 {
     internal class employee
     {
-        int id;
-        string name;
-        string department;
-        float salary;
+       
+        public int id { get; set; }
+        public string name { get; set; }
+        public string department { get; set; }
+        public float salary { get; set; }
+
+        public employee(int id, string name, string department, float salary)
+        {
+            this.id = id;
+            this.name = name;
+            this.department = department;
+            this.salary = salary;
+        }
+
     }
 }
