@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Task2
 {
 
-    internal class employee_service
+    internal class employee_service : Iemployee_service
     {
         List<employee> employees = new List<employee>();
 
@@ -49,7 +49,8 @@ namespace Task2
                     break;
                 }
             }
-            employee emp = new employee(id, s, department, salary); 
+            employee emp = new employee(id, s, department, salary);
+            employees.Add(emp);
 
 
 
@@ -133,7 +134,7 @@ namespace Task2
         }
         public void sort()
         {
-            employees.Sort();
+            employees.Sort((a, b) => a.salary.CompareTo(b.salary));
             foreach (var e in employees)
             {
                 Console.WriteLine($" Name: {e.name}, Salary: {e.salary}");

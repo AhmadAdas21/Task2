@@ -14,6 +14,7 @@ namespace Task2
         {
             bool ok = true;
             int c;
+            employee_service service = new employee_service();
             while (ok)
             {
                 Console.WriteLine("************************");
@@ -34,14 +35,14 @@ namespace Task2
 
                 }
                 switch (c)
-                {
+                { 
                     case 1:
-                        add_employee();break;
-                    case 2: view_all(); break;
-                    case 3: search_employee(); break;
-                    case 4: delete_employee(); break;
-                    case 5: ffilter(); break;
-                    case 6: sort(); break;
+                        service.add_employee();break;
+                    case 2: service.view_all(); break;
+                    case 3: service.search_employee(); break;
+                    case 4: service.delete_employee(); break;
+                    case 5: service.ffilter(); break;
+                    case 6: service.sort(); break;
                     case 7: Console.WriteLine("Thank you for using our system"); ok = false; break;
 
                 }
