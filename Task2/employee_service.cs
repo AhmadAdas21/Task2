@@ -34,6 +34,7 @@ namespace Task2
             string s= Console.ReadLine();
             Console.WriteLine("enter employee department:");
             string department= Console.ReadLine();
+           
             Console.WriteLine("enter employee salary:");
             int salary;
             while(true)
@@ -47,6 +48,38 @@ namespace Task2
                 {
                     Console.WriteLine("the salary number saved");
                     break;
+                }
+            }
+            Console.WriteLine("determine if the employee is a developer or manager");
+            Console.WriteLine("1 developer");
+            Console.WriteLine("2 manager");
+            int field;
+            while (true)
+            {
+                if (!int.TryParse(Console.ReadLine(), out field))
+                {
+                    Console.WriteLine("Please enter a valid integer for employee field.");
+                    continue;
+                }
+                else
+                {
+                    if (field == 1)
+                    {
+                        Console.WriteLine("the employee is a developer");
+                        employee e= new developer(id, s, department, salary);
+                        break;
+                    }
+                    else if (field == 2)
+                    {
+                        Console.WriteLine("the employee is a manager");
+                        employee e=new manager(id, s, department, salary);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter 1 for developer or 2 for manager");
+                        continue;
+                    }
                 }
             }
             employee emp = new employee(id, s, department, salary);
