@@ -131,7 +131,16 @@ namespace Task2
             return;
 
         }
-        public
+        public void sort()
+        {
+            employees.Sort();
+            foreach (var e in employees)
+            {
+                Console.WriteLine($" Name: {e.name}, Salary: {e.salary}");
+            }
+            Console.WriteLine("employees sorted by salary");
+
+        }
 
     }
 }
