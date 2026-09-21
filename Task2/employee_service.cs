@@ -89,8 +89,49 @@ namespace Task2
         }
         public void delete_employee()
         {
+            Console.WriteLine("enter the id number for the employee");
+            int idd;
+            while (true)
+            {
+                if (!int.TryParse(Console.ReadLine(), out idd))
+                {
+                    Console.WriteLine(" enter a valid integer for employee id.");
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            foreach(var employee in employees)
+            {
+                if (employee.id == idd)
+                {
+                    employees.Remove(employee);
+                    Console.WriteLine("employee deleted");
+                    return;
+                }
+            }
+            
+            return;
 
         }
+        public void ffilter()
+        {
+            Console.WriteLine("enter the department name ");
+            string departmentt= Console.ReadLine();
+            foreach(var e in employees)
+            {
+                if (e.department == departmentt)
+                {
+                    Console.WriteLine($" Name: {e.name}, Department: {e.department}");
+                }
+            }
+            
+            return;
+
+        }
+        public
 
     }
 }
